@@ -1,0 +1,79 @@
+import { Meta } from "@storybook/addon-docs";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+<Meta title="Testing Syntax Highlight" />
+
+# Diff example with dark theme
+
+This is a sample Git diff snippet example with Storybook docs
+
+```diff dark
+- import { OldComponent } from 'my-package'
++ import { NewComponent } from 'my-package'
+```
+
+# Diff example
+
+This is a sample Git diff snippet example with Storybook docs
+
+```diff
+- import { OldComponent } from 'my-package'
++ import { NewComponent } from 'my-package'
+```
+
+# Handlebars example
+
+This is a sample Ember octane snippet example with Storybook docs
+
+```handlebars
+<div class="list-item {{@task.state}}" data-test-task>
+  <label class="checkbox">
+    <input
+      type="checkbox"
+      disabled
+      name="checked"
+      checked={{this.isArchived}}
+    />
+    <span
+      class="checkbox-custom"
+      data-test-task-archive
+      {{on "click" this.archive}}
+    ></span>
+  </label>
+  <div class="title">
+    <input
+      type="text"
+      readonly
+      value={{@task.title}}
+      placeholder="Input title"
+    />
+  </div>
+  <div class="actions">
+    {{#unless this.isArchived}}
+      <span data-test-task-pin {{on "click" this.pin}}>
+        <span class="icon-star"></span>
+      </span>
+    {{/unless}}
+  </div>
+</div>
+
+```
+
+# Sass example
+
+This is a sample Sass snippet example with Storybook docs
+
+```scss
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+```
+
+export const Component = () => {
+  return <SyntaxHighlighter style={dark} />;
+};
